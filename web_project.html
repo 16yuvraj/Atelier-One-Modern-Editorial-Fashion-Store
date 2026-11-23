@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atelier One — Modern editorial fashion store featuring minimalist tailoring, conscious materials, and enduring silhouettes.">
+  <title>Atelier One — Modern Editorial Fashion</title>
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<script src="script.js"></script>
+
+
+
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Store announcement">
+    <div class="container announcement-inner">
+      <p class="announcement-text">
+        <span class="announcement-tag">NEW SEASON</span>
+        Complimentary global courier delivery on orders over $250 &bull; 30-day effortless returns
+      </p>
+      <div class="announcement-meta">
+        <span class="currency-tag">USD ($)</span>
+        <span class="separator">|</span>
+        <a href="#featured-story" class="announcement-link">The Autumn Editorial &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Site Header -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Brand Logo -->
+      <div class="brand-wrap">
+        <a href="#" class="brand-logo" aria-label="Atelier One Home">
+          <span class="brand-name">ATELIER ONE</span>
+          <span class="brand-sub">STUDIOS &bull; EDITIONS</span>
+        </a>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <nav class="primary-nav" id="primary-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#catalog" class="nav-link" data-filter="all">Collection</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="new-arrivals">New Arrivals</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="clothing">Clothing</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="footwear">Footwear</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="accessories">Accessories</a></li>
+          <li><a href="#featured-story" class="nav-link">Editorial</a></li>
+          <li><a href="#about" class="nav-link">Atelier</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Utilities & Actions -->
+      <div class="header-actions">
+        <!-- Quick Search Bar (Desktop) -->
+        <div class="header-search-bar" role="search">
+          <svg class="icon search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="header-search-input" class="header-search-input" placeholder="Search catalog..." aria-label="Search clothing and accessories">
+          <button type="button" id="clear-search-btn" class="clear-search-btn" aria-label="Clear search" style="display: none;">&times;</button>
+        </div>
+
+        <!-- Wishlist Button -->
+        <button class="action-btn wishlist-toggle-btn" id="wishlist-toggle-btn" aria-label="Wishlist items (0 saved)" title="Wishlist">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-badge wishlist-badge" id="wishlist-count">0</span>
+        </button>
+
+        <!-- Shopping Bag Button -->
+        <button class="action-btn bag-toggle-btn" id="bag-toggle-btn" aria-label="Shopping bag (0 items)" title="Shopping Bag">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="action-badge bag-badge" id="bag-count">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <!-- Hero Promotional Banner -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-eyebrow">AUTUMN / WINTER 2026 &bull; COLLECTION 04</span>
+          <h1 class="hero-title" id="hero-title">Form, Fiber &amp; Modern Quietude</h1>
+          <p class="hero-desc">
+            Architectural silhouettes crafted in tactile organic wools, raw selvedge denim, and Italian vegetable-tanned leathers. Conceived for timeless daily wear.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary" id="hero-shop-btn">Shop The Collection</a>
+            <a href="#featured-story" class="btn btn-secondary">Explore The Journal</a>
+          </div>
+          <div class="hero-features">
+            <div class="hero-feature-item">
+              <span class="feature-dot"></span>
+              <span>100% Traceable Wools</span>
+            </div>
+            <div class="hero-feature-item">
+              <span class="feature-dot"></span>
+              <span>Limited Atelier Runs</span>
+            </div>
+            <div class="hero-feature-item">
+              <span class="feature-dot"></span>
+              <span>Carbon-Neutral Dispatch</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img 
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" 
+              alt="Editorial campaign model showcasing Atelier One Autumn tailoring" 
+              class="hero-img"
+              onerror="this.onerror=null; this.src='assets/images/hero-editorial.svg';"
+            >
+            <div class="hero-floating-card">
+              <span class="floating-tag">CURATED LOOK</span>
+              <p class="floating-title">The Wool Wrap Overcoat &bull; Limited Run 04</p>
+              <a href="#catalog" class="floating-link" data-filter="clothing">View Outerwear &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Category Tiles -->
+    <section class="categories-section" aria-labelledby="categories-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">EXPLORE BY WARDROBE PIECE</span>
+          <h2 class="section-title" id="categories-heading">Curated Disciplines</h2>
+        </div>
+        
+        <div class="category-grid">
+          <article class="category-card" data-category="new-arrivals">
+            <div class="category-media">
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="New seasonal arrivals" loading="lazy" onerror="this.onerror=null; this.src='assets/images/merino-knit.svg';">
+              <div class="category-overlay"></div>
+            </div>
+            <div class="category-info">
+              <h3 class="category-title">New Arrivals</h3>
+              <p class="category-count">6 Current Pieces</p>
+              <span class="category-link-text">Shop New In &rarr;</span>
+            </div>
+            <button class="category-card-btn" aria-label="Filter by New Arrivals" data-filter="new-arrivals"></button>
+          </article>
+
+          <article class="category-card" data-category="clothing">
+            <div class="category-media">
+              <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=700&q=80" alt="Architectural coats and tailored clothing" loading="lazy" onerror="this.onerror=null; this.src='assets/images/trench-coat.svg';">
+              <div class="category-overlay"></div>
+            </div>
+            <div class="category-info">
+              <h3 class="category-title">Tailored Clothing</h3>
+              <p class="category-count">6 Structured Pieces</p>
+              <span class="category-link-text">Explore Tailoring &rarr;</span>
+            </div>
+            <button class="category-card-btn" aria-label="Filter by Clothing" data-filter="clothing"></button>
+          </article>
+
+          <article class="category-card" data-category="footwear">
+            <div class="category-media">
+              <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=700&q=80" alt="Artisanal leather shoes and boots" loading="lazy" onerror="this.onerror=null; this.src='assets/images/leather-loafers.svg';">
+              <div class="category-overlay"></div>
+            </div>
+            <div class="category-info">
+              <h3 class="category-title">Footwear</h3>
+              <p class="category-count">4 Handcrafted Pairs</p>
+              <span class="category-link-text">Discover Shoes &rarr;</span>
+            </div>
+            <button class="category-card-btn" aria-label="Filter by Footwear" data-filter="footwear"></button>
+          </article>
+
+          <article class="category-card" data-category="accessories">
+            <div class="category-media">
+              <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=700&q=80" alt="Fine accessories, canvas bags and scarves" loading="lazy" onerror="this.onerror=null; this.src='assets/images/canvas-tote.svg';">
+              <div class="category-overlay"></div>
+            </div>
+            <div class="category-info">
+              <h3 class="category-title">Accessories</h3>
+              <p class="category-count">4 Tactile Objects</p>
+              <span class="category-link-text">Browse Objects &rarr;</span>
+            </div>
+            <button class="category-card-btn" aria-label="Filter by Accessories" data-filter="accessories"></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section class="catalog-section" id="catalog" aria-labelledby="catalog-heading">
+      <div class="container">
+        
+        <div class="catalog-header">
+          <div>
+            <span class="section-eyebrow">SEASONAL ARCHIVE &bull; PERPETUAL REPERTOIRE</span>
+            <h2 class="section-title" id="catalog-heading">The Curated Collection</h2>
+            <p class="section-desc">Formulated with honest craftsmanship, minimal seams, and durable organic textiles.</p>
+          </div>
+          <div class="catalog-meta">
+            <span class="catalog-counter" id="catalog-counter">Displaying <strong>14</strong> pieces</span>
+          </div>
+        </div>
+
+        <!-- Controls Toolbar -->
+        <div class="catalog-controls">
+          <div class="filter-chips-wrap" role="tablist" aria-label="Product categories">
+            <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All Pieces</button>
+            <button class="filter-chip" data-filter="new-arrivals" role="tab" aria-selected="false">New Arrivals</button>
+            <button class="filter-chip" data-filter="clothing" role="tab" aria-selected="false">Clothing</button>
+            <button class="filter-chip" data-filter="footwear" role="tab" aria-selected="false">Footwear</button>
+            <button class="filter-chip" data-filter="accessories" role="tab" aria-selected="false">Accessories</button>
+            <button class="filter-chip filter-chip-sale" data-filter="sale" role="tab" aria-selected="false">Archive Sale</button>
+          </div>
+
+          <div class="catalog-sub-controls">
+            <div class="catalog-search-wrap">
+              <svg class="icon search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="search" id="catalog-search-input" class="catalog-search-input" placeholder="Filter by name, wool, silk, leather..." aria-label="Filter products by keyword">
+            </div>
+
+            <div class="sort-wrap">
+              <label for="catalog-sort" class="sort-label">Sort:</label>
+              <select id="catalog-sort" class="catalog-sort" aria-label="Sort products">
+                <option value="featured">Featured Order</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="discount">Highest Discount</option>
+                <option value="name">Alphabetical</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14 Product Cards Grid -->
+        <div class="product-grid" id="product-grid" role="region" aria-live="polite">
+          
+          <!-- Card 1 -->
+          <article class="product-card" data-id="1" data-category="clothing" data-tags="new-arrivals sale" data-price="340" data-discount="20" data-name="The Arched Trench Coat">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-sale">Sale -20%</span>
+              <button class="wishlist-btn" aria-label="Save The Arched Trench Coat to wishlist" data-id="1">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=700&q=80" alt="The Arched Trench Coat" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/trench-coat.svg';">
+                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=700&q=80" alt="Alternate view" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/trench-coat-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="1"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Clothing &bull; Gabardine</span>
+                <div class="swatches"><span class="swatch swatch-camel"></span><span class="swatch swatch-olive"></span><span class="swatch swatch-charcoal"></span></div>
+              </div>
+              <h3 class="product-name">The Arched Trench Coat</h3>
+              <div class="product-pricing"><span class="price-current">$340</span><span class="price-old">$425</span><span class="price-discount-tag">Save $85</span></div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="product-card" data-id="2" data-category="clothing" data-tags="new-arrivals" data-price="195" data-discount="0" data-name="Relaxed Merino Wool Knit">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-new">New Season</span>
+              <button class="wishlist-btn" aria-label="Save Relaxed Merino Wool Knit to wishlist" data-id="2">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=700&q=80" alt="Relaxed Merino Wool Knit" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/merino-knit.svg';">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=700&q=80" alt="Texture detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/merino-knit-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="2"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Clothing &bull; 100% Merino</span>
+                <div class="swatches"><span class="swatch swatch-oatmeal"></span><span class="swatch swatch-olive"></span></div>
+              </div>
+              <h3 class="product-name">Relaxed Merino Wool Knit</h3>
+              <div class="product-pricing"><span class="price-current">$195</span></div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="product-card" data-id="3" data-category="clothing" data-tags="" data-price="220" data-discount="0" data-name="Tailored Pleated Trousers">
+            <div class="product-media-wrap">
+              <button class="wishlist-btn" aria-label="Save Tailored Pleated Trousers to wishlist" data-id="3">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80" alt="Tailored Pleated Trousers" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/pleated-trousers.svg';">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="High-rise waist detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/pleated-trousers-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="3"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Clothing &bull; Virgin Wool</span>
+                <div class="swatches"><span class="swatch swatch-charcoal"></span><span class="swatch swatch-tan"></span></div>
+              </div>
+              <h3 class="product-name">Tailored Pleated Trousers</h3>
+              <div class="product-pricing"><span class="price-current">$220</span></div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="product-card" data-id="4" data-category="accessories" data-tags="new-arrivals" data-price="165" data-discount="0" data-name="The Structured Canvas Tote">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-signature">Bestseller</span>
+              <button class="wishlist-btn" aria-label="Save The Structured Canvas Tote to wishlist" data-id="4">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=700&q=80" alt="The Structured Canvas Tote" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/canvas-tote.svg';">
+                <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80" alt="Interior detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/canvas-tote-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="4"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Accessories &bull; Organic Canvas</span>
+                <div class="swatches"><span class="swatch swatch-ecru"></span><span class="swatch swatch-olive"></span></div>
+              </div>
+              <h3 class="product-name">The Structured Canvas Tote</h3>
+              <div class="product-pricing"><span class="price-current">$165</span></div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="product-card" data-id="5" data-category="footwear" data-tags="sale" data-price="280" data-discount="20" data-name="Square-Toe Leather Loafers">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-sale">Sale -20%</span>
+              <button class="wishlist-btn" aria-label="Save Square-Toe Leather Loafers to wishlist" data-id="5">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=700&q=80" alt="Square-Toe Leather Loafers" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/leather-loafers.svg';">
+                <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=700&q=80" alt="Heel detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/leather-loafers-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="5"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Footwear &bull; Calfskin</span>
+                <div class="swatches"><span class="swatch swatch-espresso"></span><span class="swatch swatch-charcoal"></span></div>
+              </div>
+              <h3 class="product-name">Square-Toe Leather Loafers</h3>
+              <div class="product-pricing"><span class="price-current">$280</span><span class="price-old">$350</span><span class="price-discount-tag">Save $70</span></div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="product-card" data-id="6" data-category="clothing" data-tags="" data-price="390" data-discount="0" data-name="Double-Breasted Wool Blazer">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-signature">Archival</span>
+              <button class="wishlist-btn" aria-label="Save Double-Breasted Wool Blazer to wishlist" data-id="6">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80" alt="Double-Breasted Wool Blazer" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/wool-blazer.svg';">
+                <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=700&q=80" alt="Lapel detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/wool-blazer-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="6"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Clothing &bull; 100% Shetland Wool</span>
+                <div class="swatches"><span class="swatch swatch-olive"></span><span class="swatch swatch-charcoal"></span></div>
+              </div>
+              <h3 class="product-name">Double-Breasted Wool Blazer</h3>
+              <div class="product-pricing"><span class="price-current">$390</span></div>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="product-card" data-id="7" data-category="clothing" data-tags="new-arrivals" data-price="260" data-discount="0" data-name="Silk Slip Midi Dress">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-new">New Season</span>
+              <button class="wishlist-btn" aria-label="Save Silk Slip Midi Dress to wishlist" data-id="7">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80" alt="Silk Slip Midi Dress" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/silk-dress.svg';">
+                <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=700&q=80" alt="Drape detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/silk-dress-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="7"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Clothing &bull; Sandwashed Silk</span>
+                <div class="swatches"><span class="swatch swatch-champagne"></span><span class="swatch swatch-olive"></span></div>
+              </div>
+              <h3 class="product-name">Silk Slip Midi Dress</h3>
+              <div class="product-pricing"><span class="price-current">$260</span></div>
+            </div>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="product-card" data-id="8" data-category="footwear" data-tags="" data-price="310" data-discount="0" data-name="Minimalist Chelsea Boots">
+            <div class="product-media-wrap">
+              <button class="wishlist-btn" aria-label="Save Minimalist Chelsea Boots to wishlist" data-id="8">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=700&q=80" alt="Minimalist Chelsea Boots" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/chelsea-boots.svg';">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Sole profile" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/chelsea-boots-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="8"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Footwear &bull; Italian Boxcalf</span>
+                <div class="swatches"><span class="swatch swatch-charcoal"></span><span class="swatch swatch-tan"></span></div>
+              </div>
+              <h3 class="product-name">Minimalist Chelsea Boots</h3>
+              <div class="product-pricing"><span class="price-current">$310</span></div>
+            </div>
+          </article>
+
+          <!-- Card 9 -->
+          <article class="product-card" data-id="9" data-category="accessories" data-tags="sale" data-price="115" data-discount="18" data-name="Brushed Alpaca Scarf">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-sale">Archive -18%</span>
+              <button class="wishlist-btn" aria-label="Save Brushed Alpaca Scarf to wishlist" data-id="9">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80" alt="Brushed Alpaca Scarf" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/alpaca-scarf.svg';">
+                <img src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=700&q=80" alt="Fringe detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/alpaca-scarf-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="9"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Accessories &bull; Baby Alpaca</span>
+                <div class="swatches"><span class="swatch swatch-olive"></span><span class="swatch swatch-camel"></span></div>
+              </div>
+              <h3 class="product-name">Brushed Alpaca Scarf</h3>
+              <div class="product-pricing"><span class="price-current">$115</span><span class="price-old">$140</span><span class="price-discount-tag">Save $25</span></div>
+            </div>
+          </article>
+
+          <!-- Card 10 -->
+          <article class="product-card" data-id="10" data-category="footwear" data-tags="new-arrivals" data-price="295" data-discount="0" data-name="Clean Monolith Derby Shoes">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-new">New Season</span>
+              <button class="wishlist-btn" aria-label="Save Clean Monolith Derby Shoes to wishlist" data-id="10">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=700&q=80" alt="Clean Monolith Derby Shoes" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/derby-shoes.svg';">
+                <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=700&q=80" alt="Welt detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/derby-shoes-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="10"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Footwear &bull; Goodyear Welted</span>
+                <div class="swatches"><span class="swatch swatch-charcoal"></span><span class="swatch swatch-espresso"></span></div>
+              </div>
+              <h3 class="product-name">Clean Monolith Derby Shoes</h3>
+              <div class="product-pricing"><span class="price-current">$295</span></div>
+            </div>
+          </article>
+
+          <!-- Card 11 -->
+          <article class="product-card" data-id="11" data-category="accessories" data-tags="" data-price="85" data-discount="0" data-name="Architectural Hoop Earrings">
+            <div class="product-media-wrap">
+              <button class="wishlist-btn" aria-label="Save Architectural Hoop Earrings to wishlist" data-id="11">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=700&q=80" alt="Architectural Hoop Earrings" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/brass-earrings.svg';">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="Clasp detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/brass-earrings-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="11"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Accessories &bull; Solid Brass</span>
+                <div class="swatches"><span class="swatch swatch-brass"></span><span class="swatch swatch-silver"></span></div>
+              </div>
+              <h3 class="product-name">Architectural Hoop Earrings</h3>
+              <div class="product-pricing"><span class="price-current">$85</span></div>
+            </div>
+          </article>
+
+          <!-- Card 12 -->
+          <article class="product-card" data-id="12" data-category="clothing" data-tags="sale" data-price="245" data-discount="21" data-name="Raw Japanese Denim Jacket">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-sale">Sale -21%</span>
+              <button class="wishlist-btn" aria-label="Save Raw Japanese Denim Jacket to wishlist" data-id="12">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=700&q=80" alt="Raw Japanese Denim Jacket" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/denim-jacket.svg';">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80" alt="Seam detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/denim-jacket-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="12"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Clothing &bull; 13.5oz Kuroki Denim</span>
+                <div class="swatches"><span class="swatch swatch-indigo"></span><span class="swatch swatch-charcoal"></span></div>
+              </div>
+              <h3 class="product-name">Raw Japanese Denim Jacket</h3>
+              <div class="product-pricing"><span class="price-current">$245</span><span class="price-old">$310</span><span class="price-discount-tag">Save $65</span></div>
+            </div>
+          </article>
+
+          <!-- Card 13 -->
+          <article class="product-card" data-id="13" data-category="accessories" data-tags="" data-price="95" data-discount="0" data-name="Italian Calfskin Belt">
+            <div class="product-media-wrap">
+              <button class="wishlist-btn" aria-label="Save Italian Calfskin Belt to wishlist" data-id="13">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=700&q=80" alt="Italian Calfskin Belt" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/calfskin-belt.svg';">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Stitching detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/calfskin-belt-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="13"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Accessories &bull; Saddle Leather</span>
+                <div class="swatches"><span class="swatch swatch-charcoal"></span><span class="swatch swatch-tan"></span></div>
+              </div>
+              <h3 class="product-name">Italian Calfskin Belt</h3>
+              <div class="product-pricing"><span class="price-current">$95</span></div>
+            </div>
+          </article>
+
+          <!-- Card 14 -->
+          <article class="product-card" data-id="14" data-category="footwear" data-tags="new-arrivals" data-price="190" data-discount="0" data-name="Woven Leather Slides">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-signature">Limited</span>
+              <button class="wishlist-btn" aria-label="Save Woven Leather Slides to wishlist" data-id="14">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=700&q=80" alt="Woven Leather Slides" class="product-img product-img-primary" loading="lazy" onerror="this.onerror=null; this.src='assets/images/woven-slides.svg';">
+                <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=700&q=80" alt="Lattice pattern detail" class="product-img product-img-alt" loading="lazy" onerror="this.onerror=null; this.src='assets/images/woven-slides-alt.svg';">
+              </div>
+              <button class="quick-add-btn" data-id="14"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Bag</span></button>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-sub">
+                <span class="product-category">Footwear &bull; Hand-Braided Leather</span>
+                <div class="swatches"><span class="swatch swatch-tan"></span><span class="swatch swatch-charcoal"></span></div>
+              </div>
+              <h3 class="product-name">Woven Leather Slides</h3>
+              <div class="product-pricing"><span class="price-current">$190</span></div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Empty Results Message -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <div class="empty-state-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+          <h3 class="empty-state-title">No matching pieces found</h3>
+          <p class="empty-state-desc">We couldn't find any items matching your active search terms or category selection.</p>
+          <button class="btn btn-secondary" id="reset-filters-btn">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Featured Editorial Story -->
+    <section class="story-section" id="featured-story" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="story-wrapper">
+          <div class="story-image-column">
+            <div class="story-media-frame">
+              <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80" alt="Studio cutting table with raw virgin wool" class="story-img" loading="lazy" onerror="this.onerror=null; this.src='assets/images/story-craft.svg';">
+              <div class="story-caption-card">
+                <span class="caption-studio">STUDIO ARCHIVE</span>
+                <p class="caption-text">All garments crafted in small batches across family-owned workshops in Biella and Porto.</p>
+              </div>
+            </div>
+          </div>
+          <div class="story-text-column">
+            <span class="section-eyebrow">THE ATELIER JOURNAL &bull; ESSAY 08</span>
+            <h2 class="section-title story-heading" id="story-heading">Purity of Material, Longevity in Form</h2>
+            <blockquote class="story-quote">
+              &ldquo;We intentionally reject high-velocity micro-trends. Every seam, drape, and proportion is calibrated to endure for seasons, gaining tactile beauty with age.&rdquo;
+            </blockquote>
+            <p class="story-body">
+              Atelier One was founded upon a simple tenet: that everyday clothing should feel architectural yet effortless. We source single-origin fibers directly from certified regenerative mills, eschew synthetic coatings, and cut generously to honor natural drape.
+            </p>
+            <div class="story-metrics">
+              <div class="metric-item"><span class="metric-num">100%</span><span class="metric-label">Traceable European Wools</span></div>
+              <div class="metric-item"><span class="metric-num">0</span><span class="metric-label">Virgin Plastics in Outerwear</span></div>
+              <div class="metric-item"><span class="metric-num">30+</span><span class="metric-label">Year Wearability Philosophy</span></div>
+            </div>
+            <div class="story-cta">
+              <a href="#catalog" class="btn btn-primary" data-filter="all">Shop The Full Archive</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Pillars -->
+    <section class="pillars-section" id="about" aria-label="Atelier Guarantees">
+      <div class="container">
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            </div>
+            <h3 class="pillar-title">Artisanal Provenance</h3>
+            <p class="pillar-desc">Responsibly milled textiles produced in collaboration with century-old family ateliers.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <h3 class="pillar-title">Insured Express Courier</h3>
+            <p class="pillar-desc">Complimentary shipping on orders over $250. Packaged in recycled and plastic-free boxes.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+            </div>
+            <h3 class="pillar-title">30-Day Easy Returns</h3>
+            <p class="pillar-desc">Doorstep courier pickup and seamless exchanges if the fit or silhouette is not ideal.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="pillar-title">Lifetime Care Guarantee</h3>
+            <p class="pillar-desc">Complimentary spare horn buttons and repair thread cards included with every tailored coat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Slide-Over Shopping Bag Drawer -->
+  <aside class="bag-drawer" id="bag-drawer" aria-label="Shopping bag drawer" aria-hidden="true">
+    <div class="bag-drawer-header">
+      <div class="bag-drawer-title-wrap">
+        <h2 class="bag-drawer-title">Shopping Bag</h2>
+        <span class="bag-drawer-count" id="bag-drawer-items-count">(0 items)</span>
+      </div>
+      <button class="bag-drawer-close" id="bag-drawer-close" aria-label="Close shopping bag drawer">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Tracker -->
+    <div class="shipping-progress-container" id="shipping-progress-container">
+      <div class="shipping-progress-text" id="shipping-progress-text">Add <strong>$250.00</strong> for complimentary worldwide courier</div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="shipping-progress-bar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="bag-drawer-body">
+      <!-- Empty Bag Placeholder -->
+      <div class="bag-empty-state" id="bag-empty-state">
+        <svg class="bag-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <p class="bag-empty-text">Your bag is currently empty.</p>
+        <p class="bag-empty-sub">Explore our curated collection to add timeless garments.</p>
+        <button class="btn btn-secondary btn-sm" id="bag-start-shopping-btn">Explore Collection</button>
+      </div>
+
+      <!-- Live List of Bag Items -->
+      <ul class="bag-items-list" id="bag-items-list" aria-label="Items in your shopping bag"></ul>
+    </div>
+
+    <!-- Bag Drawer Footer -->
+    <div class="bag-drawer-footer" id="bag-drawer-footer" style="display: none;">
+      <div class="bag-summary-row"><span>Subtotal</span><span class="summary-amount" id="bag-subtotal">$0.00</span></div>
+      <div class="bag-summary-row"><span>Insured Courier</span><span class="summary-shipping" id="bag-shipping">Complimentary</span></div>
+      <div class="bag-summary-row summary-total-row"><span>Estimated Total</span><span class="summary-total" id="bag-total">$0.00</span></div>
+      <div class="demo-disclaimer-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="disclaimer-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <span>Student Demo Showcase: No real orders or transactions are processed.</span>
+      </div>
+      <button class="btn btn-primary btn-block checkout-demo-btn" id="checkout-demo-btn">Proceed to Checkout (Demo)</button>
+      <button class="clear-bag-btn" id="clear-bag-btn">Clear bag</button>
+    </div>
+  </aside>
+
+  <!-- Bag Backdrop -->
+  <div class="bag-backdrop" id="bag-backdrop" aria-hidden="true"></div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast-notification" role="status" aria-live="polite" aria-hidden="true">
+    <div class="toast-icon" id="toast-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <div class="toast-content"><p class="toast-message" id="toast-message">Item added to bag</p></div>
+  </div>
+
+  <!-- Primary Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="#" class="footer-logo">ATELIER ONE</a>
+          <p class="footer-tagline">An independent fashion atelier dedicated to architectural silhouettes, honest materiality, and low-velocity production.</p>
+          <div class="footer-social-links">
+            <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+            <span class="social-dot">&bull;</span>
+            <a href="#" class="social-link" aria-label="Pinterest">Pinterest</a>
+            <span class="social-dot">&bull;</span>
+            <a href="#" class="social-link" aria-label="Substack Journal">The Journal</a>
+            <span class="social-dot">&bull;</span>
+            <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Shop Collection</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog" data-filter="all">All Disciplines</a></li>
+            <li><a href="#catalog" data-filter="new-arrivals">New Arrivals</a></li>
+            <li><a href="#catalog" data-filter="clothing">Tailored Coats &amp; Knits</a></li>
+            <li><a href="#catalog" data-filter="footwear">Calfskin Footwear</a></li>
+            <li><a href="#catalog" data-filter="accessories">Canvas &amp; Leather Bags</a></li>
+            <li><a href="#catalog" data-filter="sale">Seasonal Archive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">The Studio</h4>
+          <ul class="footer-links">
+            <li><a href="#featured-story">Design Philosophy</a></li>
+            <li><a href="#featured-story">Sourcing &amp; Mills</a></li>
+            <li><a href="#featured-story">The Journal</a></li>
+            <li><a href="#about">Life-Cycle &amp; Care</a></li>
+            <li><a href="#about">Atelier Transparency</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h4 class="footer-heading">The Atelier Dispatch</h4>
+          <p class="newsletter-desc">Receive private previews of limited edition releases, textile essays, and studio announcements.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+              <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe to newsletter">Subscribe</button>
+            </div>
+            <p class="newsletter-feedback" id="newsletter-feedback" aria-live="polite"></p>
+          </form>
+          <span class="newsletter-note">We respect your privacy. Unsubscribe at any time.</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">&copy; 2026 Atelier One Studios. Designed for First-Year Web Development Showcase.</p>
+        <div class="footer-legal-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Cookie Preferences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
